@@ -34,7 +34,7 @@ def rightbar_up():
     rightbar.sety(rightbar.ycor() + rightbar.dy)
     if rightbar.ycor() > 170:   # restricts the bar from going off the screen
         rightbar.sety(170)
-        rightbar.dy *= -1
+        rightbar.dy *= 1
         
 def rightbar_down():
     y = rightbar.ycor()
@@ -43,7 +43,7 @@ def rightbar_down():
     rightbar.sety(rightbar.ycor() + rightbar.dy)
     if rightbar.ycor() > -300:
         rightbar.sety(-300)
-        rightbar.dy *= -1
+        rightbar.dy *= 1
 
 def leftbar_up():
     y = leftbar.ycor()
@@ -52,7 +52,7 @@ def leftbar_up():
     leftbar.sety(leftbar.ycor() + leftbar.dy)
     if leftbar.ycor() > 170:
         leftbar.sety(170)
-        leftbar.dy *= -1
+        leftbar.dy *= 1
         
 def leftbar_down():
     y = leftbar.ycor()
@@ -61,7 +61,7 @@ def leftbar_down():
     leftbar.sety(leftbar.ycor() + leftbar.dy)
     if leftbar.ycor() > -300:
         leftbar.sety(-300)
-        leftbar.dy *= -1
+        leftbar.dy *= 1
 
 window.listen()
 window.onkeypress(rightbar_up, "Up")
