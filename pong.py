@@ -10,6 +10,33 @@ window.bgcolor("#1F6420")
 window.setup(width = 1280, height = 720)
 window.tracer(0)
 
+# field border
+field = t.Turtle()
+field.penup()
+field.color("white")
+field.pensize(5)
+field.ht() # hideturtle
+field.setposition(-500, 220) # top line (x, y)
+field.speed(5)
+def fields():
+        field.pendown() 
+        field.fd(1000) # top line length 
+        field.pu() # pen up as pu
+        field.setposition(-500,-320) # bottom line (x, y)
+        field.pd() # pen down as pd
+        field.fd(1000) # forward as fd
+def net():
+    field.pensize(1)
+    field.setposition(0, -320)
+    field.setheading(90) # 90 degrees
+    for i in range (14):
+        field.fd(20) # length per line
+        field.penup()
+        field.fd(20) # gap
+        field.pendown()
+fields()
+net()
+
 rightbar = t.Turtle()
 rightbar.penup()
 rightbar.color("blue")
