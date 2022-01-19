@@ -168,11 +168,11 @@ def moveBall():
     global speed
     ball.forward(speed)
     # up
-    if ball.ycor() > 200:
+    if ball.ycor() > 195:
         ball.setheading(360 - ball.heading() % 360)
 
     # down
-    if ball.ycor() < -300: 
+    if ball.ycor() < -295: 
         ball.setheading(360 - ball.heading() % 360)
 
     # left
