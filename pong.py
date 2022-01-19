@@ -12,10 +12,32 @@ window.bgcolor("#1F6420")
 window.setup(width = 1280, height = 720)
 window.tracer(0)
 
-def mouseClick(x,y):
-    print("X = {0}, Y = {1}".format(x,y))
-
-t.onscreenclick(mouseClick,1)
+# field border
+field = t.Turtle()
+field.penup()
+field.color("white")
+field.pensize(5)
+field.ht() # hideturtle
+field.setposition(-500, 220) # top line (x, y)
+field.speed(5)
+def fields():
+        field.pendown() 
+        field.fd(1000) # top line length 
+        field.pu() # pen up as pu
+        field.setposition(-500,-320) # bottom line (x, y)
+        field.pd() # pen down as pd
+        field.fd(1000) # forward as fd
+def net():
+    field.pensize(1)
+    field.setposition(0, -320)
+    field.setheading(90) # 90 degrees
+    for i in range (14):
+        field.fd(20) # length per line
+        field.penup()
+        field.fd(20) # gap
+        field.pendown()
+fields()
+net()
 
 rightbar = t.Turtle()
 rightbar.penup()
@@ -146,11 +168,11 @@ def moveBall():
     global speed
     ball.forward(speed)
     # up
-    if ball.ycor() > 200:
+    if ball.ycor() > 195:
         ball.setheading(360 - ball.heading() % 360)
 
     # down
-    if ball.ycor() < -300: 
+    if ball.ycor() < -295: 
         ball.setheading(360 - ball.heading() % 360)
 
     # left
